@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../components/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Adicionar produto</h1>
+
+            <form action="/editarProduto/" method="POST">
+                <label for="nome_produto">Nome do Produto: </label>
+                <input type="text" id="nome_produto" name="nome_produto">
+
+                <label for="preco">Preço: </label>
+                <input type="text" id="preco" name="preco">
+
+                <button type="submit" class="btn btn-secondary btn-sm" style="height: 30px;">Salvar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../components/footer'); %>
+    </footer>
+
+</body>
+
+</html>

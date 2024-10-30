@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../components/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Produtos</h1>
+            <table class="w-100">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% produtos.forEach(function(produto) { %>
+                        <tr>
+                            <td>
+                                <p>
+                                    <%= produto.nome_produto %>
+                                </p>
+                            </td>
+
+                            <td>R$ <%= produto.preco %>
+                            </td>
+                            <td>
+                                <a href="/editarProduto?id=<%= produto.id %>">
+                                    Editar
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/deletarProduto?id=<%= produto.id %>" class="text-danger">Deletar
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../components/footer'); %>
+    </footer>
+
+</body>
+
+</html>
